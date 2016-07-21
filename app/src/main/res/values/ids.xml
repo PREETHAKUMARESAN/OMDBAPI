@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="AddMovMenu" type="id">addmovie</item>
+    <item name="ViewAll" type="id">display</item>
+    <item name="Sort" type="id">sort</item>
+    <item name="Search" type="id">search</item>
+</resources>

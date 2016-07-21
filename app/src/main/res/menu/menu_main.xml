@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.preethakumaresan.moviesgalore.MainActivity">
+    <item
+        android:id="@+id/AddMovMenu"
+        android:title="Add Movie"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/ViewAll"
+        android:title="View All"
+        app:showAsAction="ifRoom" />
+</menu>
