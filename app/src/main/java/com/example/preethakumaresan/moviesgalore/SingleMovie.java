@@ -3,6 +3,8 @@ package com.example.preethakumaresan.moviesgalore;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ public class SingleMovie extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_movie);
+        Intent a = getIntent();//get the details from the intent called in movieFragment
 
         genre = (TextView) findViewById(R.id.singleGenre);
         plot = (TextView) findViewById(R.id.singlePlot);
@@ -28,7 +31,8 @@ public class SingleMovie extends AppCompatActivity {
         type = (TextView) findViewById(R.id.singleType);
         rating = (TextView) findViewById(R.id.singleRating);
 
-        Intent a = getIntent();//get the details from the intent called in movieFragment
+
+
         if (a == null) {
             setTitle("TITLE");
             poster.setImageResource(R.mipmap.ic_launcher);
@@ -44,5 +48,16 @@ public class SingleMovie extends AppCompatActivity {
             type.setText(a.getStringExtra("type"));
             rating.setText(a.getStringExtra("rating"));
         }
+        ((Button)findViewById(R.id.button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = getIntent();//get the details from the intent called in movieFragment
+                Intent i=new Intent(SingleMovie.this, VideoTube.class);
+                String title=a.getStringExtra("title");
+                i.putExtra("title",title);
+                startActivity(i);
+            }
+        });
+
     }
 }

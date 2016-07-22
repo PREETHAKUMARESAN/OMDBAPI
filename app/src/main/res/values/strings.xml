@@ -7,5 +7,8 @@
     <string name="add_movie">ADD</string>
     <string name="search">Search</string>
     <string name="view_all">M/S</string>
+    <string name="error">error</string>
+    <string name="add_view_sort_movies_from_the_online_database_omdb_api_enjaay">ADD, VIEW, SORT MOVIES FROM THE ONLINE DATABASE OMDB.API! ENJAAY!!</string>
+    <string name="movies_galore">MOVIES GALORE</string>
 
 </resources>

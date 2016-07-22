@@ -64,6 +64,7 @@ public class ViewAllResults extends AppCompatActivity {
         Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(myTitle);
+        Log.e("myTag","supportactionbaar");
 
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -88,7 +89,7 @@ public class ViewAllResults extends AppCompatActivity {
         reactHere.setVisibility(View.INVISIBLE);
 
         subscription = RxTextView.textChangeEvents(reactHere)
-                .debounce(400, TimeUnit.MILLISECONDS)
+                .debounce(350, TimeUnit.MILLISECONDS)
                 .filter(new Func1<TextViewTextChangeEvent, Boolean>() {
                     @Override
                     public Boolean call(TextViewTextChangeEvent textViewTextChangeEvent) {
@@ -104,12 +105,14 @@ public class ViewAllResults extends AppCompatActivity {
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Log.e("myTag","onbeforetext");
                 beffore = s.toString();
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!(beffore.equals(s.toString()))) {
+                if (!(beffore.equals(s.toString())))
+                {
                     reactHere.setText(s.toString());
                     reactHere.setSelection(reactHere.getText().length());
                 }
@@ -167,7 +170,8 @@ public class ViewAllResults extends AppCompatActivity {
 
             @Override
             public void onNext(TextViewTextChangeEvent textViewTextChangeEvent) {
-                if (!(actv.getText().toString().equals(textViewTextChangeEvent.text().toString()))) {
+                if (!(actv.getText().toString().equals(textViewTextChangeEvent.text().toString())))
+                {
                     actv.setText(textViewTextChangeEvent.text().toString());
                     actv.showDropDown();
                 }
@@ -190,10 +194,12 @@ public class ViewAllResults extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
         switch (id) {
             case R.id.Search:
                 if (!searched) {
                     searched = true;
+                    Log.e("myTag","searched is true");
                     reactHere.setVisibility(View.VISIBLE);
                 } else {
                     if (reactHere.getText().toString().equals("")) {

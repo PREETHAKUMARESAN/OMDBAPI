@@ -40,6 +40,8 @@
         <activity android:name=".AddMovie" >
         </activity>
 
+        <activity android:name=".VideoTube"/>
+
     </application>
 
 </manifest>

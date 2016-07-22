@@ -62,14 +62,12 @@
         android:layout_toRightOf="@+id/singleImg"
         android:layout_toEndOf="@+id/singleImg" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/trailer"
-        android:hint="Trailer Link"
-        android:layout_marginTop="43dp"
-        android:layout_below="@+id/singleGenre"
+        android:text="TRAILER"
+        android:id="@+id/button"
+        android:layout_below="@+id/singleRating"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
